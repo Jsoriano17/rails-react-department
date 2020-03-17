@@ -7,6 +7,7 @@ import Home from './components/Home'
 import About from './components/About'
 import NoMatch from './components/NoMatch'
 import NavBar from './components/NavBar'
+import DepartmentForm from './components/DepartmentForm'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/About' component={About} />
           <Route path='/Departments' component={Departments} />
+          <Route path='/DepartmentForm' component={DepartmentForm} />
+
           <Route component={NoMatch} />
 
         </Switch>
