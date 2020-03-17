@@ -1,6 +1,8 @@
+
 import React from "react";
 import { Card, Header, Button, } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
 import axios from 'axios'
 
 class Departments extends React.Component {
