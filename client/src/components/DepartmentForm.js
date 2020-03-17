@@ -12,7 +12,7 @@ class DepartmentsForm extends React.Component {
     axios.post("/api/departments", department).then(res => {
       console.log(res)
       this.props.history.push("/departments");
-    });
+    }).catch(e => {console.log(e)})
     this.setState({ ...this.defaultValues });
   };
 
