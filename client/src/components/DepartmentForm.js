@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Header } from "semantic-ui-react";
 import axios from "axios";
 
-class ProductsForm extends React.Component {
+class DepartmentsForm extends React.Component {
   defaultValues = { name: "" };
   state = { ...this.defaultValues };
 
@@ -47,4 +47,4 @@ class ProductsForm extends React.Component {
   }
 }
 
-export default ProductsForm;
+export default DepartmentsForm;

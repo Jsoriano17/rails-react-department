@@ -19,11 +19,6 @@ const NavBar = () => (
         Departments
       </Menu.Item>
     </Link>
-    <Link to='/departmentform'>
-      <Menu.Item>
-        DepartmentForm
-      </Menu.Item>
-    </Link>
   </Menu>
 
 )
