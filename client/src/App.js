@@ -8,6 +8,7 @@ import About from './components/About'
 import NoMatch from './components/NoMatch'
 import NavBar from './components/NavBar'
 import DepartmentForm from './components/DepartmentForm'
+import DepartmentView from './components/DepartmentView';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/About' component={About} />
           <Route exact path='/departments' component={Departments} />
-          <Route path='/departmentform' component={DepartmentForm} />
+          <Route exact path='/departments/new' component={DepartmentForm} />
+          <Route exact path="/departments/:id" component={DepartmentView} />
           <Route component={NoMatch} />
         </Switch>
       </Container>

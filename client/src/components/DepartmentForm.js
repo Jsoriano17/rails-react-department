@@ -10,9 +10,11 @@ class DepartmentsForm extends React.Component {
     e.preventDefault();
     const department = { ...this.state };
     axios.post("/api/departments", department).then(res => {
+      this.setState({ ...this.defaultValues });
       this.props.history.push("/departments");
-    });
-    this.setState({ ...this.defaultValues });
+    }).catch( (err) => {
+      console.log(err)
+  })
   };
 
   handleChange = e => {
