@@ -18,7 +18,6 @@ function App() {
           <Route path='/About' component={About} />
           <Route path='/Departments' component={Departments} />
           <Route component={NoMatch} />
-
         </Switch>
       </Container>
     </>
