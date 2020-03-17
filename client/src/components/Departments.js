@@ -15,13 +15,13 @@ class Departments extends React.Component {
       })
   }
 
-  renderdepartments = () => {
+  renderDepartments = () => {
     const { departments, } = this.state;
 
     if (departments.length <= 0)
       return <h2>No Departments</h2>
     return departments.map( department => (
-      <Card>
+      <Card key={`department-${department.id}`}>
         <Card.Content>
           <Card.Header>{ department.name }</Card.Header>
         </Card.Content>
@@ -39,13 +39,13 @@ class Departments extends React.Component {
       <div>
       <Header as="h1">Departments</Header>
       <br />
-      <Button as={Link} color="blue" to="/departmentform">
+      <Button as={Link} color="blue" to="/departments/new">
         Add Departments
       </Button>
       <br />
       <br />
       <Card.Group>
-        { this.renderdepartments() }
+        { this.renderDepartments() }
       </Card.Group>
     </div>
     )

@@ -18,7 +18,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/About' component={About} />
           <Route exact path='/departments' component={Departments} />
-          <Route path='/departmentform' component={DepartmentForm} />
+          <Route exact path='/departments/new' component={DepartmentForm} />
           <Route component={NoMatch} />
         </Switch>
       </Container>
