@@ -2,7 +2,7 @@ class Api::DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :update, :destroy]
 
   def index
-    render json: Department.all
+    render json: Department.getItemsHash
   end
 
   def show
@@ -10,7 +10,7 @@ class Api::DepartmentsController < ApplicationController
   end
 
   def create
-    department = department.new(department_params)
+    department = Department.new(department_params)
     if department.save
       render json: department
     else
@@ -38,4 +38,5 @@ class Api::DepartmentsController < ApplicationController
   def department_params
     params.require(:department).permit(:name)
   end
+
 end
