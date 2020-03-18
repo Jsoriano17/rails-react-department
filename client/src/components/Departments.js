@@ -15,6 +15,10 @@ class Departments extends React.Component {
       })
   }
 
+  handleDelete = () => {
+    console.log('delete clicked')
+  }
+
   renderDepartments = () => {
     const { departments, } = this.state;
 
@@ -29,7 +33,7 @@ class Departments extends React.Component {
         <Button as={Link} to={`departments/${department.id}`} color='blue'>
             View
           </Button>
-          <Button as={Link} to={`departments/${department.id}`} color='blue'>
+          <Button onClick={this.handleDelete} color='blue'>
             Delete
           </Button>
         </Card.Content>
