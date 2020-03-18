@@ -26,11 +26,14 @@ class Departments extends React.Component {
           <Card.Header>{ department.name }</Card.Header>
         </Card.Content>
         <Card.Content extra>
-        <Button as={Link} to={`departments/${department.id}`} color='blue'>
+        <Button as={Link} to={`departments/${department.id}`} color='green'>
             View
           </Button>
-          <Button as={Link} to={`departments/${department.id}`} color='blue'>
+          <Button as={Link} to={`departments/delete/${department.id}`} color='red'>
             Delete
+          </Button>
+          <Button as={Link} to={`departments/edit/${department.id}`} color='blue'>
+            Edit
           </Button>
         </Card.Content>
       </Card>

@@ -9,6 +9,8 @@ import NoMatch from './components/NoMatch'
 import NavBar from './components/NavBar'
 import DepartmentForm from './components/DepartmentForm'
 import DepartmentView from './components/DepartmentView';
+import DepartmentDelete from './components/DepartmentDelete'
+import DepartmentEdit from './components/DepartmentEdit'
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
           <Route path='/About' component={About} />
           <Route exact path='/departments' component={Departments} />
           <Route exact path='/departments/new' component={DepartmentForm} />
+          <Route exact path='/departments/delete/:id' component={DepartmentDelete} />
+          <Route exact path='/departments/edit/:id' component={DepartmentEdit} />
+
           <Route exact path="/departments/:id" component={DepartmentView} />
 
           <Route component={NoMatch} />

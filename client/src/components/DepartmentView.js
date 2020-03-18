@@ -7,7 +7,6 @@ export default class DepartmentView extends React.Component {
         department: {}
     }
     componentDidMount() {
-        console.log(this.props.match.params)
         const department_id = this.props.match.params.id;
         axios.get(`/api/departments/${department_id}`).then(res => {
             // nested axios call
