@@ -11,23 +11,23 @@ class DepartmentsEdit extends React.Component {
   componentDidMount() {
     const department_id = this.props.match.params.id;
     axios.get(`/api/departments/${department_id}`).then(res => {
-        // nested axios call
-        const departmentData = res.data;
-        this.setState({
-          name: departmentData.name
-        });
+      // nested axios call
+      const departmentData = res.data;
+      this.setState({
+        name: departmentData.name
+      });
     })
-}
+  }
 
   handleSubmit = e => {
     e.preventDefault();
     const department_id = this.props.match.params.id;
-    const department = { ...this.state};
+    const department = { ...this.state };
     axios.put(`/api/departments/${department_id}`, department).then(res => {
       this.props.history.push("/departments");
-    }).catch( (err) => {
+    }).catch((err) => {
       console.log(err.response)
-  })
+    })
 
   };
 

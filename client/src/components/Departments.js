@@ -45,7 +45,7 @@ class Departments extends React.Component {
       <div>
       <Header as="h1">Departments</Header>
       <br />
-      <Button as={Link} color="blue" to="/departments/new">
+      <Button as={Link} color="black" to="/departments/new">
         Add Departments
       </Button>
       <br />
