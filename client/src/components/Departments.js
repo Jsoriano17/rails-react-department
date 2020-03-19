@@ -15,6 +15,10 @@ class Departments extends React.Component {
       })
   }
 
+  handleDelete = () => {
+    console.log('delete clicked')
+  }
+
   renderDepartments = () => {
     const { departments, } = this.state;
 

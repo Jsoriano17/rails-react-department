@@ -24,7 +24,6 @@ function App() {
           <Route exact path='/departments/new' component={DepartmentForm} />
           <Route exact path='/departments/delete/:id' component={DepartmentDelete} />
           <Route exact path='/departments/edit/:id' component={DepartmentEdit} />
-
           <Route exact path="/departments/:id" component={DepartmentView} />
 
           <Route component={NoMatch} />
