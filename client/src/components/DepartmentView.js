@@ -11,6 +11,7 @@ export default class DepartmentView extends React.Component {
     axios.get(`/api/departments/${department_id}`).then(res => {
       // nested axios call
       const departmentData = res.data;
+      console.log(departmentData.items)
       this.setState({
         department: departmentData,
       });
@@ -22,15 +23,12 @@ export default class DepartmentView extends React.Component {
       <div>
         <Segment>
           <Header as="h1">{name}</Header>
+          {/* <Accordion>
+          {items.map(item => <h5>{item.name}</h5>)}
+          </Accordion> */}
         </Segment>
-        <Accordion.Content active={activeIndex === accordionIndex}>
-          {items.map(item => (
-            <div key={item.id}>
-              {`${item.name}`}
-            </div>
-          ))}
-          <ItemForm departmentId={department_id} addItem={addItem} />
-        </Accordion.Content>
+            
+         
         <br />
         <br />
         <Button

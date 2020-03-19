@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  belongs_to: 
+  price: 1.5
+  department: one
 
 two:
   name: MyString
-  belongs_to: 
+  price: 1.5
+  department: two
