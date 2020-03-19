@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  price: 1.5
   department: one
 
 two:
   name: MyString
-  price: 1.5
   department: two
