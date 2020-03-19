@@ -28,9 +28,6 @@ class Departments extends React.Component {
       <Card key={`department-${department.menu_id}`}>
         <Card.Content>
           <Card.Header>{department.name}</Card.Header>
-          {/* <Card.Description>
-            {department.items.map(item => <h5>{item.name}</h5>)}
-          </Card.Description> */}
         </Card.Content>
         <Card.Content extra>
           <Button as={Link} to={`departments/${department.menu_id}`} color='green'>
