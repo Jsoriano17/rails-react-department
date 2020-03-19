@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Button, Header, Segment } from 'semantic-ui-react'
+import ItemView from './ItemView';
 
 export default class DepartmentView extends React.Component {
     state = {
@@ -24,6 +25,7 @@ export default class DepartmentView extends React.Component {
               <Header as="h1">{ name }</Header>
             </Segment>
             <br />
+            <ItemView props departmentId={this.props.match.params.id}/>
             <br />
             <Button 
               color="black" 
