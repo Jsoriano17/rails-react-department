@@ -11,6 +11,8 @@ import DepartmentForm from './components/DepartmentForm'
 import DepartmentView from './components/DepartmentView';
 import DepartmentDelete from './components/DepartmentDelete'
 import DepartmentEdit from './components/DepartmentEdit'
+import styled from 'styled-components';
+
 
 function App() {
   return (

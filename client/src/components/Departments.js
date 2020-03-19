@@ -4,6 +4,7 @@ import { Card, Header, Button, } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import axios from 'axios'
+import styled from 'styled-components';
 
 class Departments extends React.Component {
   state = { departments: [], };
@@ -21,9 +22,9 @@ class Departments extends React.Component {
     if (departments.length <= 0)
       return <h2>No Departments</h2>
     return departments.map( department => (
-      <Card key={`department-${department.id}`}>
+      <Card key={`department-${department.id}`} as={CardColor}>
         <Card.Content>
-          <Card.Header>{ department.name }</Card.Header>
+          <Card.Header as={ DepartmentHeader } fSize="small">{ department.name }</Card.Header>
         </Card.Content>
         <Card.Content extra>
         <Button as={Link} to={`departments/${department.id}`} color='green'>
@@ -43,7 +44,7 @@ class Departments extends React.Component {
   render() {
     return (
       <div>
-      <Header as="h1">Departments</Header>
+      <Header as={ DepartmentHeader } fSize="large">Departments</Header>
       <br />
       <Button as={Link} color="black" to="/departments/new">
         Add Departments
@@ -58,4 +59,22 @@ class Departments extends React.Component {
   }
 }
 
+const DepartmentHeader = styled.h1`
+font-family: 'Baloo 2', cursive !important;
+font-size: ${props => fontSize(props.fSize)} !important;
+`
+const fontSize = (size) => {
+  switch(size) {
+    case 'large':
+      return '50px';
+    case 'small':
+      return '25px';
+    default:
+      return '15px';
+  }
+};
+
+const CardColor = styled.div`
+background: #d4ecff !important;
+`
 export default Departments;
