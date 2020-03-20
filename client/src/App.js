@@ -11,7 +11,10 @@ import DepartmentForm from './components/DepartmentForm'
 import DepartmentView from './components/DepartmentView';
 import DepartmentDelete from './components/DepartmentDelete'
 import DepartmentEdit from './components/DepartmentEdit'
-import styled from 'styled-components';
+import ItemNew from './components/ItemNew'
+import ItemEdit from './components/ItemEdit'
+import ItemDelete from './components/ItemDelete'
+
 
 
 function App() {
@@ -26,9 +29,10 @@ function App() {
           <Route exact path='/departments/new' component={DepartmentForm} />
           <Route exact path='/departments/delete/:id' component={DepartmentDelete} />
           <Route exact path='/departments/edit/:id' component={DepartmentEdit} />
-
           <Route exact path="/departments/:id" component={DepartmentView} />
-
+          <Route exact path="/departments/:department_id/newItem" component={ItemNew} />
+          <Route exact path='/departments/:department_id/editItem/:id' component={ItemEdit} />
+          <Route exact path='/departments/:department_id/deleteItem/:id' component={ItemDelete} />
           <Route component={NoMatch} />
         </Switch>
       </Container>

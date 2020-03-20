@@ -2,7 +2,7 @@ class Api::DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :update, :destroy]
 
   def index
-    render json: Department.all
+    render json: Department.getItemsHash
   end
 
   def show

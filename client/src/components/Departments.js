@@ -11,9 +11,13 @@ class Departments extends React.Component {
 
   componentDidMount() {
     axios.get("/api/departments")
-      .then( res => {
+      .then(res => {
         this.setState({ departments: res.data, });
       })
+  }
+
+  handleDelete = () => {
+    console.log('delete clicked')
   }
 
   renderDepartments = () => {
@@ -27,13 +31,13 @@ class Departments extends React.Component {
           <Card.Header as={ DepartmentHeader } fSize="small">{ department.name }</Card.Header>
         </Card.Content>
         <Card.Content extra>
-        <Button as={Link} to={`departments/${department.id}`} color='green'>
+          <Button as={Link} to={`departments/${department.menu_id}`} color='green'>
             View
           </Button>
-          <Button as={Link} to={`departments/delete/${department.id}`} color='red'>
+          <Button as={Link} to={`departments/delete/${department.menu_id}`} color='red'>
             Delete
           </Button>
-          <Button as={Link} to={`departments/edit/${department.id}`} color='blue'>
+          <Button as={Link} to={`departments/edit/${department.menu_id}`} color='blue'>
             Edit
           </Button>
         </Card.Content>
@@ -48,13 +52,14 @@ class Departments extends React.Component {
       <br />
       <Button as={Link} color="black" to="/departments/new">
         Add Departments
+
       </Button>
-      <br />
-      <br />
-      <Card.Group>
-        { this.renderDepartments() }
-      </Card.Group>
-    </div>
+        <br />
+        <br />
+        <Card.Group>
+          {this.renderDepartments()}
+        </Card.Group>
+      </div>
     )
   }
 }
